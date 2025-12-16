@@ -1,6 +1,6 @@
-﻿namespace Tarefa.Models
+﻿namespace TarefaApi.Models
 {
-    public class TarefaTask
+    public class Tarefa
     {
         public Guid Id { get; private set; }
 
@@ -12,6 +12,9 @@
 
         public Guid CategoryId { get; private set; }
 
-        
+        public Category Category { get; private set; }
+
+
+
     }
 }

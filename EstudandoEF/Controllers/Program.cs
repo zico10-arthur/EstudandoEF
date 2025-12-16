@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using TarefaApi.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +8,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+string? StringDeConexao = builder.Configuration.GetConnectionString("StringConexaoPostGres");
+
+if (StringDeConexao is null)
+{
+    throw new Exception("string de conexão não definida");
+}
+builder.Services.AddDbContext<TarefaApiContext>(opt => opt.UseNpgsql(StringDeConexao));
 
 var app = builder.Build();
 

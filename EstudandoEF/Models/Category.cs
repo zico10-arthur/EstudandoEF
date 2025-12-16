@@ -1,4 +1,4 @@
-﻿namespace Tarefa.Models
+﻿namespace TarefaApi.Models
 {
     public class Category
     {
@@ -8,6 +8,5 @@
 
         public List<Tarefa> Tarefas { get; private set; } = new();
 
-        public IReadOnlyList<Tarefa> tarefa => Tarefas;
     }
 }

@@ -1,18 +1,18 @@
-﻿using Tarefa.Models;
+﻿using TarefaApi.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Tarefa.Data
+namespace TarefaApi.Data
 {
-    public class TarefaContext : DbContext
+    public class TarefaApiContext : DbContext
     {
-        public TarefaContext(DbContextOptions<TarefaContext> opt) : base(opt)
+        public TarefaApiContext(DbContextOptions<TarefaApiContext> opt) : base(opt)
         {
             
         }
 
         public DbSet<Category> Categories { get; set; }
 
-        public DbSet<TarefaTask> Tarefas { get; set; }
+        public DbSet<Tarefa> Tarefas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
