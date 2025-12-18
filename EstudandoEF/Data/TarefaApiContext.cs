@@ -14,9 +14,9 @@ namespace TarefaApi.Data
 
         public DbSet<Tarefa> Tarefas { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
+       // protected override void OnModelCreating(ModelBuilder modelBuilder)
+       // {
+          //  base.OnModelCreating(modelBuilder);
+       // }
     }
 }
