@@ -27,24 +27,40 @@ namespace TarefaApi.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                return NotFound(ex.Message);
             }
         }
 
         [HttpPost]
 
-        public async Task<IActionResult> AddCategories([FromBody] Category category)
+        public async Task<IActionResult> AddCategories([FromBody] AddCategoryDTO dto)
         {
             try
             {
-                await _service.AddCategoriesAsnyc(category);
-                return Ok("categoria incluida");
+                await _service.AddCategoriesAsync(dto);
+                return Created();
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPut]
+
+        public async Task<IActionResult> ChangeCategory([FromBody] ChangeCategoryDTO dto)
+        {
+            try
+            {
+                await _service.ChangeCategoryAsync(dto);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+       
 
 
     }

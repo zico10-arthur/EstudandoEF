@@ -8,5 +8,16 @@
 
         public List<Tarefa> Tarefas { get; private set; } = new();
 
+        public Category(string name)
+        {
+            Name = name;
+        }
+
+        public void ChangeName(string NewName)
+        {
+            Name = NewName;
+           
+        }
+
     }
 }
