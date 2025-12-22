@@ -1,7 +1,10 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using TarefaApi.Data;
 using TarefaApi.Repository;
-using TarefaApi.Service;
+using TarefaApi.Service.CategoryService;
+using TarefaApi.Service.TarefaService;
+using TarefaApi.Service.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +24,11 @@ builder.Services.AddDbContext<TarefaApiContext>(opt => opt.UseNpgsql(StringDeCon
 
 builder.Services.AddScoped<CategoryRepository>();
 builder.Services.AddScoped<CategoryService>();
+builder.Services.AddScoped<TarefaRepository>();
+builder.Services.AddScoped<TarefaService>();
+builder.Services.AddAutoMapper(typeof(CategoryProfile));
+
+
 
 var app = builder.Build();
 

@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TarefaApi.Models;
-using TarefaApi.Service;
+using TarefaApi.Service.CategoryDTO;
+using TarefaApi.Service.CategoryService;
 
 namespace TarefaApi.Controllers
 {
@@ -21,11 +22,11 @@ namespace TarefaApi.Controllers
         {
             try
             {
-                List<Category> category = await _service.ListCategoriesAsync();
+                List<ListCategoryDTO> category = await _service.ListCategoriesAsync();
                 return Ok(category);
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return NotFound(ex.Message);
             }
@@ -56,6 +57,20 @@ namespace TarefaApi.Controllers
                 return NoContent();
             }
             catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> RemoveCategory( Guid id)
+        {
+            try
+            {
+                await _service.RemoveCategoryAsync(id);
+                return NoContent();
+            }
+            catch(Exception ex)
             {
                 return BadRequest(ex.Message);
             }

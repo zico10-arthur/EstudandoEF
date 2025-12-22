@@ -14,9 +14,12 @@ namespace TarefaApi.Data
 
         public DbSet<Tarefa> Tarefas { get; set; }
 
-       // protected override void OnModelCreating(ModelBuilder modelBuilder)
-       // {
-          //  base.OnModelCreating(modelBuilder);
-       // }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Tarefa>()
+                .HasOne(t => t.Category)
+                .WithMany(c => c.Tarefas)
+                .HasForeignKey(t => t.CategoryId);
+        }
     }
 }

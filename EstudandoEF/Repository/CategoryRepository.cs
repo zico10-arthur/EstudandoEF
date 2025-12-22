@@ -14,7 +14,7 @@ namespace TarefaApi.Repository
 
         public async Task<List<Category>> ListCategoriesAsync()
         {
-            return await _context.Categories.OrderBy(c => c.Name).ToListAsync();
+            return await _context.Categories.Include(t => t.Tarefas).OrderBy(c => c.Name).ToListAsync();
         }
 
         public async Task AddCategorieAsync(Category category)
@@ -32,7 +32,7 @@ namespace TarefaApi.Repository
         public async Task RemoveCategory(Category category)
         {
 
-             _context.Categories.Remove(category);
+            _context.Categories.Remove(category);
 
             await _context.SaveChangesAsync();
         }

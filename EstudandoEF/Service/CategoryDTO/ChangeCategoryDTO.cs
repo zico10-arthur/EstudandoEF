@@ -1,4 +1,4 @@
-﻿namespace TarefaApi.Service
+﻿namespace TarefaApi.Service.CategoryDTO
 {
     public class ChangeCategoryDTO
     {

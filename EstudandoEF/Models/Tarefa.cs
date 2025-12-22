@@ -14,6 +14,17 @@
 
         public Category Category { get; private set; }
 
+        public Tarefa()
+        {
+            
+        }
+        public Tarefa(string name, string description, Guid categoryId, bool completed)
+        {
+            Name = name;
+            Description = description;
+            Completed = completed;
+            CategoryId = categoryId;
+        }
 
 
     }

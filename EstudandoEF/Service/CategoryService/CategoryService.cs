@@ -1,21 +1,28 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using TarefaApi.Models;
 using TarefaApi.Repository;
+using TarefaApi.Service.CategoryDTO;
 using TarefaApi.Service.ExceptionsCategory;
 
-namespace TarefaApi.Service
+namespace TarefaApi.Service.CategoryService
 {
     public class CategoryService
     {
         private readonly CategoryRepository _repository;
-        public CategoryService(CategoryRepository repository)
+        private readonly IMapper _mapper;
+        public CategoryService(CategoryRepository repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
-        public async Task<List<Category>> ListCategoriesAsync()
+        public async Task<List<ListCategoryDTO>> ListCategoriesAsync()
         {
-            return await _repository.ListCategoriesAsync();
+            List<Category> category = await _repository.ListCategoriesAsync();
+            List<ListCategoryDTO> dtoList = _mapper.Map<List<ListCategoryDTO>>(category);
+            return dtoList;
+
         }
 
         public async Task AddCategoriesAsync(AddCategoryDTO dto)
@@ -48,6 +55,8 @@ namespace TarefaApi.Service
             }
 
             await _repository.RemoveCategory(categoryexiste);
+
+            
         }
     }
 }
