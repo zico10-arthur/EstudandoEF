@@ -34,5 +34,69 @@ namespace TarefaApi.Service.TarefaService
 
 
         }
+
+        public async Task ChangeName(ChangeNameDTO dto)
+        {
+            Tarefa tarefa = await _repository.BuscarId(dto.Id);
+
+            if (tarefa == null)
+            {
+                throw new TarefaNotFound();
+            }
+
+            tarefa.ChangeName(dto.NewName);
+            _repository.Save();
+        }
+
+        public async Task ChangeDescription(ChangeDescriptionDTO dto)
+        {
+            Tarefa tarefa = await _repository.BuscarId(dto.Id);
+
+            if (tarefa == null)
+            {
+                throw new TarefaNotFound();
+            }
+
+            tarefa.ChangeDescription(dto.NewDescription);
+            _repository.Save();
+        }
+
+        public async Task ChangeStatus(ChangeStatusDTO dto)
+        {
+            Tarefa tarefa = await _repository.BuscarId(dto.Id);
+
+            if (tarefa == null)
+            {
+                throw new TarefaNotFound();
+            }
+
+            tarefa.ChangeStatus(dto.NewCompleted);
+            _repository.Save();
+        }
+
+        public async Task ChangeCategoryId(ChangeCategoryIdDTO dto)
+        {
+            Tarefa tarefa = await _repository.BuscarId(dto.Id);
+
+            if (tarefa == null)
+            {
+                throw new TarefaNotFound();
+            }
+
+            tarefa.ChangeCategoryId(dto.CategoryId);
+            _repository.Save();
+        }
+
+        public async Task RemoveTarefa(Guid id)
+        {
+            Tarefa tarefa = await _repository.BuscarId(id);
+
+            if (tarefa == null)
+            {
+                throw new TarefaNotFound();
+            }
+            _repository.RemoveTarefa(tarefa);
+            
+        }
     }
 }

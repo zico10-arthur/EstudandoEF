@@ -26,6 +26,28 @@
             CategoryId = categoryId;
         }
 
+        public void ChangeName(string newname)
+        {
+            Name = newname;
+        }
+
+        public void ChangeDescription(string newdescription)
+        {
+            Description = newdescription;
+        }
+
+        public void ChangeStatus(bool newcompleted)
+        {
+            Completed = newcompleted;
+        }
+
+        public void ChangeCategoryId(Guid categoryid)
+        {
+            CategoryId = categoryid;
+        }
+
+
+
 
     }
 }

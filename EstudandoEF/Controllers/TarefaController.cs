@@ -43,5 +43,76 @@ namespace TarefaApi.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpPut]
+        public async Task<IActionResult> ChangeName([FromBody] ChangeNameDTO dto)
+        {
+            try
+            {
+                await _service.ChangeName(dto);
+                return Ok("nome alterado com sucesso");
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut("alterardescricao")]
+
+        public async Task<IActionResult> ChangeDescription([FromBody] ChangeDescriptionDTO dto)
+        {
+            try
+            {
+                await _service.ChangeDescription(dto);
+                return NoContent();
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPut("alterarstatus")]
+        public async Task<IActionResult> ChangeStatus([FromBody] ChangeStatusDTO dto)
+        {
+            try
+            {
+                await _service.ChangeStatus(dto);
+                return Ok("Status alterado com sucesso");
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut("alterarcategoriaid")]
+
+        public async Task<IActionResult> ChangeCategoryId([FromBody] ChangeCategoryIdDTO dto)
+        {
+            try
+            {
+                await _service.ChangeCategoryId(dto);
+                return NoContent();
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+
+        public async Task<IActionResult> RemoveTarefa([FromRoute] Guid id)
+        {
+            try
+            {
+                await _service.RemoveTarefa(id);
+                return NoContent();
+            }
+            catch(Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
     }
 }

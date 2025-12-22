@@ -35,5 +35,11 @@ namespace TarefaApi.Repository
             Tarefa tarefabuscar =  await _context.Tarefas.FindAsync(id);
             return tarefabuscar;        
         }
+
+        public async Task RemoveTarefa(Tarefa tarefa)
+        {
+            _context.Tarefas.Remove(tarefa);
+            Save();
+        }
     }
 }

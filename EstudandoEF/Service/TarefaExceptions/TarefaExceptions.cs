@@ -4,7 +4,16 @@
     {
         public TarefaJaExiste()
             : base ("Tarefa já existe") { }
-            
+
+
+    }
+
+    public class TarefaNotFound : Exception 
+    {
+        public TarefaNotFound()
+
+          : base("tarefa não existe") { }
         
     }
+
 }
