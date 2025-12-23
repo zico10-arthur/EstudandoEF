@@ -1,0 +1,323 @@
+{
+  "info": {
+    "_postman_id": "6c7ffd17-d3c8-4ad5-849e-735027c222e5",
+    "name": "TAREFAS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "LISTARCATEGORIA",
+      "id": "8494f329-2d6e-437f-a31e-e1f706a34cb7",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://localhost:7174/api/Tarefas/tarefa",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7174",
+          "path": [
+            "api",
+            "Tarefas",
+            "tarefa"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ADICIONARCATEGORIA",
+      "id": "527c8534-93a9-432a-991c-3ecce583d28b",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n    {\r\n        \"id\": 2,\r\n        \"nome\": \"treinar superiores\",\r\n         \"concluido\": true\r\n    }\r\n    \r\n\r\n    \r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7174/api/Tarefas/Adicionar",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7174",
+          "path": [
+            "api",
+            "Tarefas",
+            "Adicionar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "REMOVERCATEGORIA",
+      "id": "a0e61cfb-59f1-4324-9917-d0bd79503fdb",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n    {\r\n        \"id\": 2,\r\n        \"nome\": \"treinar superiores\",\r\n         \"concluido\": true\r\n    }\r\n    \r\n\r\n    \r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7174/api/Tarefas/Remove",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7174",
+          "path": [
+            "api",
+            "Tarefas",
+            "Remove"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ALTERARCATEGORIA",
+      "id": "a79cf333-bde7-4010-9dcf-4a772a646b86",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"Id\": \"{id}\",\r\n    \"NewName\": \"\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7110/api/Category",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7110",
+          "path": [
+            "api",
+            "Category"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "LISTARTAREFA",
+      "id": "89dc1414-0873-4700-bd54-1bd65732e634",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://localhost:7110/api/Tarefa",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7110",
+          "path": [
+            "api",
+            "Tarefa"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ADICIONARTAREFA",
+      "id": "a5b84747-1404-4670-9a11-924074d90244",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"Name\" : \"\",\r\n    \"Description\" : \"\",\r\n    \"Completed\" : true,\r\n    \"CategoryId\" : \"{id}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7110/api/Tarefa",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7110",
+          "path": [
+            "api",
+            "Tarefa"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ALTERARNOME",
+      "id": "99b5fc01-f98f-4256-ba46-80adf28bf925",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \r\n    \"NewName\": \"\",\r\n    \"Id\": \"{id}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7110/api/Tarefa",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7110",
+          "path": [
+            "api",
+            "Tarefa"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ALTERARDESCRICAO",
+      "id": "abe76f4f-cf72-4de1-8217-faf11f37fb2f",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \r\n    \"NewDescription\": \"higiene bucal\",\r\n    \"Id\": \"ec306bb9-0680-445f-be68-21c712b299b4\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7110/api/Tarefa/alterardescricao",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7110",
+          "path": [
+            "api",
+            "Tarefa",
+            "alterardescricao"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ALTERARSTATUS",
+      "id": "30b92602-e7a3-49be-9ed2-e597d68369b4",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"NewCompleted\" : false,\r\n    \"Id\" : \"d6610051-32ba-4ce2-a5cd-08d3bd5af7aa\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7110/api/Tarefa/alterarstatus",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7110",
+          "path": [
+            "api",
+            "Tarefa",
+            "alterarstatus"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ALTERARCATEGORIAID",
+      "id": "a669eaff-d1b3-4739-9671-9774c8d5423e",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"Id\": \"645744a4-c178-41de-9ee0-0100adc551ff\",\r\n    \"NewName\": \"primeira categoria\"\r\n}"
+        },
+        "url": {
+          "raw": "https://localhost:7110/api/Tarefa/alterarcategoriaid",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7110",
+          "path": [
+            "api",
+            "Tarefa",
+            "alterarcategoriaid"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "REMOVERTAREFA",
+      "id": "0412234a-f81f-4af6-90ff-939ef9e6e610",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7110/api/Tarefa/77e4d5cf-6a9b-4485-aa52-5cd03dac646f",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7110",
+          "path": [
+            "api",
+            "Tarefa",
+            "77e4d5cf-6a9b-4485-aa52-5cd03dac646f"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
